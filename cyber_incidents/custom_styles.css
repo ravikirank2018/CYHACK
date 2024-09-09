@@ -1,0 +1,37 @@
+/* Add floating animation */
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-10px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Styling for the container and elements */
+body {
+    background-color: #1e1e1e;
+}
+
+.floating-card {
+    border-radius: 15px;
+    background-color: #2a2a2a;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    animation: float 6s ease-in-out infinite;
+}
+
+h1, h4 {
+    color: #00bfff; /* Light blue color */
+}
+
+.alert-box {
+    animation: float 4s ease-in-out infinite;
+}
