@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 from dash.exceptions import PreventUpdate
 from sqlalchemy import create_engine
 import numpy as np
-from sklearn.ensemble import RandomForestClassifier  # Simple AI integration for prediction
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
 
 # Connect to the MySQL database
@@ -142,7 +142,8 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             html.H4("Alerts", className="mt-4 floating animated fadeIn"),
-            html.Div(id='alert-box', className="alert-box animated flash", style={'height': '50px'})
+            html.Div(id='alert-box', className="alert-box", style={'height': '50px'}),
+            html.Div(id='alert-popup')  # Add the alert-popup here
         ], width=12)
     ]),
 
@@ -156,7 +157,31 @@ app.layout = dbc.Container([
         id='interval-component',
         interval=10 * 1000,  # Refresh every 10 seconds
         n_intervals=0
-    )
+    ),
+
+    # JavaScript to handle dynamic CSS styling and animations
+    html.Script('''
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adding hover effects to floating cards
+            const cards = document.querySelectorAll('.floating-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseover', () => {
+                    card.style.transform = 'translateY(-5px)';
+                    card.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.3)';
+                });
+                card.addEventListener('mouseout', () => {
+                    card.style.transform = 'translateY(0)';
+                    card.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+                });
+            });
+
+            // Adding bounce-in animation to alerts
+            const alertBox = document.querySelector('.alert-box');
+            if (alertBox) {
+                alertBox.style.animation = 'bounceIn 1s ease-in-out';
+            }
+        });
+    ''')
 ], fluid=True, style={'backgroundColor': '#1e1e1e', 'padding': '20px', 'borderRadius': '15px'})
 
 # Callback to update the details of all attacks
@@ -186,22 +211,40 @@ alert_style = {
 
 # Callback to alert when a new attack is detected with enhanced animation
 @app.callback(
-    Output('alert-box', 'children'),
+    [Output('alert-box', 'children'),
+     Output('alert-popup', 'children')],
     [Input('interval-component', 'n_intervals')]
 )
 def show_alerts(n):
     print(f"Interval triggered: {n}")  # Debug statement
-    if n % 2 == 0:
+    if n % 5 == 0:  # Simulated condition for showing an alert
         probability = predict_incident('Technology', 20.0, 77.0)
         print(f"Predicted probability: {probability}")  # Debug statement
         if probability > 0.5:
-            return dbc.Alert(
+            alert_message = dbc.Alert(
                 f"Cyber Attack Detected!",
                 color="danger",
                 dismissable=True,
                 className="animate__animated animate__flash",
                 style=alert_style
             )
+            popup_message = dbc.Alert(
+                f"Cyber Attack Detected!",
+                color="danger",
+                dismissable=True,
+                className="animate__animated animate__flash",
+                style={
+                    'position': 'fixed',
+                    'top': '20px',
+                    'left': '50%',
+                    'transform': 'translateX(-50%)',
+                    'width': '90%',
+                    'maxWidth': '600px',
+                    'zIndex': '9999',
+                    'boxShadow': '0 4px 8px rgba(0, 0, 0, 0.3)'
+                }
+            )
+            return alert_message, popup_message
     raise PreventUpdate
 
 # Callback to show details of the clicked attack
