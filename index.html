@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyhack - Real-Time Cyber Threat Intelligence</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #1b1b2f;
+      color: #fff;
+    }
+    header {
+      background: #162447;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #e43f5a;
+    }
+    nav {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border: 1px solid #e43f5a;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #e43f5a;
+      color: #1b1b2f;
+    }
+    .content {
+      text-align: center;
+      padding: 50px;
+    }
+    .content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .content p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    iframe {
+      border: none;
+      width: 80%;
+      height: 600px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    footer {
+      background: #162447;
+      text-align: center;
+      padding: 10px;
+      margin-top: 30px;
+    }
+    footer a {
+      color: #e43f5a;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cyhack</h1>
+    <p>Real-Time Cyber Threat Monitoring & Intelligence</p>
+  </header>
+  
+  <nav>
+    <a href="#about">About</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#contact">Contact</a>
+    <a href="https://github.com/ravikirank2018/CYHACK" target="_blank">GitHub Repo</a>
+  </nav>
+
+  <div class="content" id="about">
+    <h2>Welcome to Cyhack</h2>
+    <p>
+      Cyhack is an AI-powered platform for monitoring real-time cyber incidents, predicting threats, 
+      and taking immediate action with alerts and reports. Stay ahead of threats and secure your systems.
+    </p>
+  </div>
+
+  <div class="content" id="dashboard">
+    <h2>Live Dashboard</h2>
+    <iframe 
+      src="http://127.0.0.1:8050/" 
+      title="Cyhack Dashboard">
+    </iframe>
+    <p>
+      Note: Ensure your server is running to view the live dashboard.
+    </p>
+  </div>
+
+  <footer>
+    <p>© 2025 Cyhack | Built with ❤️ by Ravi. Visit our <a href="https://github.com/ravikirank2018/CYHACK" target="_blank">GitHub</a>.</p>
+  </footer>
+</body>
+</html>
