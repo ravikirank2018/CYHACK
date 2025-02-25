@@ -26,20 +26,20 @@ Ensure the following dependencies are installed:
 1️⃣ Clone the repository:  
 
    git clone https://github.com/ravikirank2018/CYHACK.git
-###2️⃣ Navigate to the project directory:
+**2️⃣ Navigate to the project directory:**
 cd CYHACK
-###3️⃣ Install required dependencies:
+**3️⃣ Install required dependencies:**
 pip install -r requirements.txt
-###4️⃣ Run CyHack:
+**4️⃣ Run CyHack:**
 
 python cyhack.py
 ##🎯 Usage
-###1️⃣ Start the tool:
+**1️⃣ Start the tool:**
 
 python cyhack.py
-###2️⃣ Choose a module (Network Scanning, Exploit Testing, etc.).
-###3️⃣ Enter the required parameters and execute operations.
-4️⃣ Review the results and take necessary actions.
+**2️⃣ Choose a module (Network Scanning, Exploit Testing, etc.).**
+**3️⃣ Enter the required parameters and execute operations.**
+**4️⃣ Review the results and take necessary actions.**
 
 ⚙️ Configuration
 Modify the config.json file to customize:
