@@ -1,8 +1,4 @@
 🔥 CyHack – Cybersecurity Toolkit
-
-
-
-
 🚀 CyHack is a cybersecurity toolkit designed for ethical hackers, penetration testers, and security professionals to identify vulnerabilities, test exploits, and strengthen system defenses.
 
 ⚡ Features
@@ -31,8 +27,9 @@ pip install -r requirements.txt
 python cyhack.py
 🎯 Usage
 1️⃣ Start the tool:
+
 python cyhack.py
-2️⃣ Choose a module (Network Scanning, Exploit Testing, etc.).
+2️⃣ Choose a module (e.g., Network Scanning, Exploit Testing).
 3️⃣ Enter the required parameters and execute operations.
 4️⃣ Review the results and take necessary actions.
 
@@ -51,12 +48,16 @@ CYHACK/
 │── cyber_incidents/      # Cybersecurity incident-related data and scripts
 │── requirements.txt      # Required Python dependencies
 🚨 Disclaimer
-CyHack is strictly for ethical hacking and security research purposes. Unauthorized use of this tool for malicious activities is strictly prohibited. Ensure you have legal authorization before testing any system.
+CyHack is strictly for ethical hacking and security research purposes.
+Unauthorized use of this tool for malicious activities is strictly prohibited.
+Ensure you have legal authorization before testing any system.
 
 🤝 Contributing
-Contributions are welcome! Feel free to submit a Pull Request or open an Issue.
+💡 Contributions are welcome! Feel free to submit a Pull Request or open an Issue.
 
 📌 Developed & Maintained by Ravi Kiran 🚀
+
+
 <img width="527" alt="image" src="https://github.com/user-attachments/assets/8c327a6a-1829-4d0c-bd12-0d1c7e7f97fa" />
 <img width="943" alt="image" src="https://github.com/user-attachments/assets/a49bb093-70ba-4131-a03c-a662cb489eea" />
 <img width="944" alt="image" src="https://github.com/user-attachments/assets/15289e67-b61d-45cd-a5e4-0d7cf2adf186" />
