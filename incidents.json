@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Ransomware Attack on Healthcare Provider",
+        "date": "2024-08-10",
+        "details": "A major ransomware attack targeted a large healthcare provider, encrypting sensitive patient data and demanding a significant ransom for decryption."
+    },
+    {
+        "id": 2,
+        "title": "Phishing Campaign Targets Financial Institutions",
+        "date": "2024-08-15",
+        "details": "An extensive phishing campaign was launched against several financial institutions, aiming to steal login credentials of employees and customers."
+    },
+    {
+        "id": 3,
+        "title": "Data Breach at Tech Firm",
+        "date": "2024-08-20",
+        "details": "A tech company reported a data breach that exposed the personal information of millions of users, including emails and encrypted passwords."
+    },
+    {
+        "id": 4,
+        "title": "DDoS Attack Disrupts Online Retailer",
+        "date": "2024-08-25",
+        "details": "A distributed denial-of-service (DDoS) attack disrupted the operations of a leading online retailer, causing significant downtime and loss of sales."
+    },
+    {
+        "id": 5,
+        "title": "Supply Chain Attack on Software Vendor",
+        "date": "2024-08-30",
+        "details": "A sophisticated supply chain attack compromised a popular software vendor, impacting thousands of clients who used their services."
+    }
+]

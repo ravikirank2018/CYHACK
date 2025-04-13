@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Incident Alerts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .alert {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Cyber Incident Alerts</h1>
+    <div id="alerts-container"></div>
+
+    <script>
+        async function fetchAlerts() {
+            try {
+                const response = await fetch('/alerts');
+                const data = await response.json();
+                const container = document.getElementById('alerts-container');
+                container.innerHTML = '';
+                data.forEach(alert => {
+                    const div = document.createElement('div');
+                    div.className = 'alert';
+                    div.innerHTML = `<strong>Title:</strong> ${alert.title}<br>
+                                      <strong>Date:</strong> ${alert.date}<br>
+                                      <strong>Details:</strong> ${alert.details}`;
+                    container.appendChild(div);
+                });
+            } catch (error) {
+                console.error('Error fetching alerts:', error);
+            }
+        }
+
+        fetchAlerts();
+        setInterval(fetchAlerts, 5000);  // Poll for new alerts every 5 seconds
+    </script>
+</body>
+</html>
